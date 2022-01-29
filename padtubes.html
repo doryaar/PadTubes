@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PadTubes</title>
+    <link rel="stylesheet" href="padtubes.css" />
+  </head>
+
+  <body>
+    <!-- Title and Image -->
+    <img src="pads.png" class="pads-img" />
+    <h1>PadTubes</h1>
+    <!-- Video List Input -->
+    <div class="input-control">
+      <label for="video-list">Insert YouTube links, seperated by comma ",":</label>
+      <input type="text" id="video-list" placeholder="Enter youtube links" />
+      <button id="video-list-btn">Update Pads</button>
+    </div>
+    <!-- Videos Container -->
+    <div class="hytPlayerWrapOuter" id="hytPlayerWrapOuter">
+      <!-- Video Demo 1 -->
+      <div class="hytPlayerWrap">
+        <iframe
+          width="640"
+          height="360"
+          src="https://www.youtube.com/embed/-eU90nGSegI?rel=0&enablejsapi=1"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <!-- Video Demo 2 -->
+      <div class="hytPlayerWrap">
+        <iframe
+          width="640"
+          height="360"
+          src="https://www.youtube.com/embed/WIAHt8qT4iU?rel=0&enablejsapi=1"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <!-- Video Demo 3 -->
+      <div class="hytPlayerWrap">
+        <iframe
+          width="640"
+          height="360"
+          src="https://www.youtube.com/embed/o7dntFd5UeE?rel=0&enablejsapi=1"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <!-- Video Demo 4 -->
+      <div class="hytPlayerWrap">
+        <iframe
+          width="640"
+          height="360"
+          src="https://www.youtube.com/embed/q7_u5YQ0aQw?rel=0&enablejsapi=1"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+    <script src="updatePads.js"></script>
+    <!-- https://maxl.us/hide-related -->
+    <script src="hideRelated.js"></script>
+  </body>
+</html>
