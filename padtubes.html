@@ -5,23 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PadTubes</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="padtubes.css" />
   </head>
 
   <body>
     <!-- Title and Image -->
-    <img src="pads.png" class="pads-img" />
-    <h1>PadTubes</h1>
-    <!-- Video List Input -->
-    <div class="input-control">
-      <label for="video-list">Insert YouTube links, seperated by comma ",":</label>
-      <input type="text" id="video-list" placeholder="Enter youtube links" />
-      <button id="video-list-btn">Update Pads</button>
+    <img src="pads.png" class="image" />
+    <h1 class="title">PadTubes</h1>
+    <p class="description">Play & Mix YouTube's Simultaneously</p>
+    <!-- Add\Remove Pads Buttons  -->
+    <div class="buttons-control">
+      <button type="button" class="button" id="add-btn">
+        <span class="button__text">Add Pad</span>
+        <span class="button__icon">
+          <i class="fas fa-plus"></i>
+        </span>
+      </button>
+      <button type="button" class="button" id="remove-btn">
+        <span class="button__text">Remove Pad</span>
+        <span class="button__icon">
+          <i class="fas fa-trash"></i>
+        </span>
+      </button>
     </div>
     <!-- Videos Container -->
-    <div class="hytPlayerWrapOuter" id="hytPlayerWrapOuter">
+    <div class="video_wrap_outer" id="video_wrap_outer">
       <!-- Video Demo 1 -->
-      <div class="hytPlayerWrap">
+      <div class="player_wrap">
         <iframe
           width="640"
           height="360"
@@ -30,7 +44,7 @@
         ></iframe>
       </div>
       <!-- Video Demo 2 -->
-      <div class="hytPlayerWrap">
+      <div class="player_wrap">
         <iframe
           width="640"
           height="360"
@@ -39,7 +53,7 @@
         ></iframe>
       </div>
       <!-- Video Demo 3 -->
-      <div class="hytPlayerWrap">
+      <div class="player_wrap">
         <iframe
           width="640"
           height="360"
@@ -48,7 +62,7 @@
         ></iframe>
       </div>
       <!-- Video Demo 4 -->
-      <div class="hytPlayerWrap">
+      <div class="player_wrap">
         <iframe
           width="640"
           height="360"
@@ -57,8 +71,9 @@
         ></iframe>
       </div>
     </div>
-    <script src="updatePads.js"></script>
     <!-- https://maxl.us/hide-related -->
+    <script src="iframe-api.js"></script>
     <script src="hideRelated.js"></script>
+    <script src="updatePads.js"></script>
   </body>
 </html>

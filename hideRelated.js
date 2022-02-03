@@ -2,17 +2,17 @@
 'use strict';
 function hideRelated() {
   // Activate only if not already activated
-  if (window.hideYTActivated) ;
+  // if (window.hideYTActivated) return;
   // Load API
-  if (typeof YT === 'undefined') {
-    let tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    let firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  }
+  // if (typeof YT === 'undefined') {
+  //   let tag = document.createElement('script');
+  //   tag.src = 'https://www.youtube.com/iframe_api';
+  //   let firstScriptTag = document.getElementsByTagName('script')[0];
+  //   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  // }
   // Activate on all players
   let onYouTubeIframeAPIReadyCallbacks = [];
-  for (let playerWrap of document.querySelectorAll('.hytPlayerWrap')) {
+  for (let playerWrap of document.querySelectorAll('.player_wrap')) {
     let playerFrame = playerWrap.querySelector('iframe');
     
     let onPlayerStateChange = function (event) {
@@ -35,12 +35,15 @@ function hideRelated() {
       });
     });
 
-    playerWrap.addEventListener('click', function () {
-      let playerState = player.getPlayerState();
-      if (playerState == YT.PlayerState.ENDED) {
-        player.seekTo(0);
-      } else if (playerState == YT.PlayerState.PAUSED) {
-        player.playVideo();
+    playerWrap.addEventListener('click', () => {
+      const statusesToPlay = [YT.PlayerState.PAUSED, YT.PlayerState.CUED, YT.PlayerState.UNSTARTED];
+      if (player.getPlayerState) {
+        let playerState = player.getPlayerState();
+        if (playerState == YT.PlayerState.ENDED) {
+          player.seekTo(0);
+        } else if (statusesToPlay.includes(playerState)) {
+          player.playVideo();
+        }
       }
     });
   }

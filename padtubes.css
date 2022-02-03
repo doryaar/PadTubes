@@ -2,11 +2,12 @@
 
 body {
   display: flex;
-  background-color: whitesmoke;
+  background-color: black;
   flex-direction: column;
 }
 
-h1 {
+.title {
+  color: whitesmoke;
   font-size: 4rem;
   font-family: 'Oswald', sans-serif;
   margin-top: 0;
@@ -15,7 +16,14 @@ h1 {
   align-self: center;
 }
 
-.pads-img {
+.description {
+  font-family: 'Quicksand', sans-serif;
+  color: whitesmoke;
+  align-self: center;
+  margin: 0;
+}
+
+.image {
   margin-top: 5px;
   margin-bottom: 0;
   width: 120px;
@@ -23,19 +31,74 @@ h1 {
   align-self: center;
 }
 
-.input-control {
+.buttons-control {
   margin: 2px;
   justify-content: center;
   align-self: center;
 }
 
+.button {
+  display: inline-flex;
+  height: 50px;
+  padding: 0;
+  background: rgb(139,195,74);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: rgb(120, 179, 68);
+}
+
+.button:active {
+  background: rgb(93, 131, 49);
+}
+
+#remove-btn {
+  background: rgb(255,152,0)
+}
+
+#remove-btn:hover {
+  background: rgb(226, 137, 3)
+}
+
+#remove-btn:active {
+  background: rgb(165, 100, 1)
+}
+
+.button__text,
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
+  color: white;
+  height: 100%;
+}
+
+.button__icon {
+  font-size: 1.5rem;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.video_wrap_outer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 /* Hide Related Videos During Stop */
-.hytPlayerWrap {
+.player_wrap {
   display: inline-block;
   position: relative;
 
 }
-.hytPlayerWrap.ended::after {
+.player_wrap.ended::after {
   content: '';
   position: absolute;
   top: 0;
@@ -49,7 +112,7 @@ h1 {
   background-size: 64px 64px;
   background-image: url(data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgNTEwIDUxMCI+PHBhdGggZD0iTTI1NSAxMDJWMEwxMjcuNSAxMjcuNSAyNTUgMjU1VjE1M2M4NC4xNSAwIDE1MyA2OC44NSAxNTMgMTUzcy02OC44NSAxNTMtMTUzIDE1My0xNTMtNjguODUtMTUzLTE1M0g1MWMwIDExMi4yIDkxLjggMjA0IDIwNCAyMDRzMjA0LTkxLjggMjA0LTIwNC05MS44LTIwNC0yMDQtMjA0eiIgZmlsbD0iI0ZGRiIvPjwvc3ZnPg==);
 }
-.hytPlayerWrap.paused::after {
+.player_wrap.paused::after {
   content: '';
   position: absolute;
   top: 70px;
