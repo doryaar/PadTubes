@@ -1,16 +1,7 @@
 // from: https://maxl.us/hide-related
 'use strict';
 function hideRelated() {
-  // Activate only if not already activated
-  // if (window.hideYTActivated) return;
-  // Load API
-  // if (typeof YT === 'undefined') {
-  //   let tag = document.createElement('script');
-  //   tag.src = 'https://www.youtube.com/iframe_api';
-  //   let firstScriptTag = document.getElementsByTagName('script')[0];
-  //   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  // }
-  // Activate on all players
+
   let onYouTubeIframeAPIReadyCallbacks = [];
   for (let playerWrap of document.querySelectorAll('.player_wrap')) {
     let playerFrame = playerWrap.querySelector('iframe');
